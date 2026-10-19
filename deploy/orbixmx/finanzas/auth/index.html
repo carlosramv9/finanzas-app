@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Volviendo a Finanzas</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center;
+         font-family: system-ui, sans-serif; background: #F4F6F4; color: #14201B; }
+  main { padding: 24px; text-align: center; max-width: 360px; }
+  a { display: inline-block; margin-top: 16px; padding: 14px 24px; border-radius: 26px;
+      background: #0F5F4F; color: #fff; font-weight: 700; text-decoration: none; }
+  @media (prefers-color-scheme: dark) { body { background: #14201B; color: #F4F6F4; } }
+</style>
+</head>
+<body>
+<main>
+  <p>Volviendo a la app…</p>
+  <a id="abrir" href="finanzas://auth">Abrir Finanzas</a>
+</main>
+<script>
+  // Puente OAuth: Neon Auth redirige aquí con ?neon_auth_session_verifier=…
+  // y se reenvía tal cual al deep link de la app. No se guarda nada.
+  (function () {
+    var destino = 'finanzas://auth' + window.location.search;
+    document.getElementById('abrir').href = destino;
+    window.location.replace(destino);
+  })();
+</script>
+</body>
+</html>

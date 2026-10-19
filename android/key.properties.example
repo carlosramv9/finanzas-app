@@ -1,0 +1,6 @@
+# Copia a android/key.properties (está en .gitignore).
+storePassword=CAMBIAR
+keyPassword=CAMBIAR
+keyAlias=finanzas
+# Ruta relativa a android/app/ o absoluta
+storeFile=C:/Users/carlo/keys/finanzas-release.jks
